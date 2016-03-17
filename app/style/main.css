@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; }
+  .container.inner {
+    border: 1px solid #020304;
+    width: 100%; }
+    .container.inner.send {
+      height: 50px; }
+    .container.inner.summary {
+      height: 200px;
+      justify-content: flex-start; }
+      .container.inner.summary div.body {
+        overflow-y: auto;
+        height: 160px; }
+      .container.inner.summary table {
+        width: 100%; }
+      .container.inner.summary th {
+        background-color: #ECECEC;
+        height: 30px;
+        color: #020304;
+        border: 3px inset #8F8F8F; }
+      .container.inner.summary tr {
+        border-left: 3px solid #8F8F8F;
+        border-right: 3px solid #8F8F8F; }
+        .container.inner.summary tr:last-child {
+          border-bottom: 3px solid #8F8F8F; }
+      .container.inner.summary th.email, .container.inner.summary td.email {
+        width: 70%; }
+      .container.inner.summary th.function, .container.inner.summary td.function {
+        width: 30%; }
+        .container.inner.summary th.function a:hover, .container.inner.summary td.function a:hover {
+          cursor: pointer; }
+    .container.inner.log div.scroll {
+      height: 80px;
+      overflow-y: auto; }

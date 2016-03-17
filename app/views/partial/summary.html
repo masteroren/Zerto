@@ -1,0 +1,25 @@
+<div class="container inner summary">
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="email">Email</th>
+                    <th class="function">Function</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="body">
+        <table>
+            <tbody>
+            <tr ng-repeat="item in emails">
+                <td class="email">{{item}}</td>
+                <td class="function">
+                    <a ng-click="deleteEmail($index)">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
