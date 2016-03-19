@@ -15,6 +15,16 @@
     width: 100%;
     padding-bottom: 5px;
     padding-top: 5px; }
+    .container.inner.send .msg-container {
+      display: flex;
+      justify-content: space-between; }
+      .container.inner.send .msg-container input {
+        flex-grow: 1;
+        min-width: 270px;
+        width: 30%; }
+      .container.inner.send .msg-container button {
+        margin-left: 5px;
+        border: 3px outset #8F8F8F; }
     .container.inner.summary {
       height: 300px;
       justify-content: flex-start; }
@@ -28,7 +38,8 @@
         background-color: #ECECEC;
         height: 30px;
         color: #020304;
-        border: 3px inset #8F8F8F; }
+        border: 3px outset #8F8F8F;
+        font-weight: normal; }
       .container.inner.summary tr {
         border-left: 3px solid #8F8F8F;
         border-right: 3px solid #8F8F8F; }

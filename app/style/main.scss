@@ -4,6 +4,7 @@ $gray-color: #8F8F8F;
 $border: 1px solid $black-color;
 $border-gray: 3px solid $gray-color;
 $border-inset: 3px inset $gray-color;
+$border-outset: 3px outset $gray-color;
 
 .container{
     display: flex;
@@ -30,6 +31,21 @@ $border-inset: 3px inset $gray-color;
 
         &.send{
 
+            .msg-container{
+                display: flex;
+                justify-content: space-between;
+
+                input {
+                    flex-grow: 1;
+                    min-width: 270px;
+                    width: 30%;
+                }
+
+                button {
+                    margin-left: 5px;
+                    border: $border-outset;
+                }
+            }
 
         }
 
@@ -51,7 +67,8 @@ $border-inset: 3px inset $gray-color;
                 background-color: #ECECEC;
                 height: 30px;
                 color: $black-color;
-                border: $border-inset;
+                border: $border-outset;
+                font-weight: normal;
             }
 
             tr{

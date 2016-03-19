@@ -19,9 +19,21 @@ module.exports = function(grunt){
         watch:{
             css:{
                 files: '**/*.scss',
-                tasks: ['sass:dev']
+                tasks: ['sass:dev'],
+                options: {
+                  livereload: true,
+                }
             }
-        }
+        },
+
+        'http-server': {
+            'dev': {
+                port: 8080,
+                host: "127.0.0.1",
+                ext: "html",
+                openBrowser : true
+            }
+        },
 
     });
 
@@ -29,5 +41,9 @@ module.exports = function(grunt){
         'sass:dev',
         'watch'
     ]);
+
+    grunt.registerTask('run', [
+        'http-server:dev'
+    ])
 
 };

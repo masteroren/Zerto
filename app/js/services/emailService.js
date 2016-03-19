@@ -107,7 +107,7 @@
         }
 
         function addLog(message){
-            logs.push({
+            logs.unshift({
                 text: message
             });
         }
