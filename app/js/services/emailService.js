@@ -10,6 +10,10 @@
         var emails = {};
         var logs = [];
 
+        /*
+            following are addEmail and deleteEmail which are synchronously
+            i used those because no need for asynchronous method and also good for the tests
+        */
         this.addEmailSync = function(emailAddress){
 
             var valid = validateEmail(emailAddress);
@@ -17,7 +21,8 @@
 
                 addLog(valid.reason);
                 return {
-                    error: 'Email is not valid'
+                    isValid: false,
+                    message: valid.reason
                 }
 
             } else {
@@ -25,13 +30,27 @@
                 emails[emailAddress] = emailAddress;
                 addLog('Email ' + emailAddress + ' was added');
                 return {
-                    emails: self.getEmails()
+                    isValid: true,
+                    message: 'Email ' + emailAddress + ' was added'
                 }
 
             }
 
         }
 
+        this.deleteEmailSync = function(index){
+
+            var email = self.getEmails()[index];
+            addLog('Email ' + email + ' was deleted')
+            delete emails[email];
+
+        }
+
+        /*
+            following are addEmail and deleteEmail which are asynchronously
+            i didn't use those because no need for asynchronous method and
+                also didn't manage to run unit tests
+        */
         this.addEmail = function(emailAddress){
 
             var deferred = $q.defer();
@@ -51,7 +70,7 @@
                     deferred.resolve(true);
                 }
 
-            }, 0);
+           }, 0);
 
             return deferred.promise;
         }
@@ -81,6 +100,10 @@
 
         this.getLogs = function(){
             return logs;
+        }
+
+        this.getSomething = function(){
+            return true;
         }
 
         function addLog(message){

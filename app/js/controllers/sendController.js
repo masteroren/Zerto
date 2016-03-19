@@ -10,15 +10,22 @@
             text: ''
         }
 
-        $scope.send = function(){
+        $scope.sendEmailSync = function(){
+            var response = emailService.addEmailSync($scope.email.text);
+            response.isValid ? success(response) : failure(response);
+        }
+
+        $scope.sendEmail = function(){
             emailService.addEmail($scope.email.text).then(success, failure);
         }
 
         function success(response){
+            $scope.results = response;
             $rootScope.$broadcast(appConstants.eventsNames.onSendEmail);
         }
 
         function failure(response){
+            $scope.error = 'There has been an error!';
             $rootScope.$broadcast(appConstants.eventsNames.onSendEmailFailed);
         }
 

@@ -10,6 +10,11 @@
             getEmails();
         });
 
+        $scope.deleteEmailSync = function(index){
+            emailService.deleteEmailSync(index);
+            success();
+        }
+
         $scope.deleteEmail = function(index){
             emailService.deleteEmail(index).then(success, failure);
         }
