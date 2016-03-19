@@ -14,11 +14,11 @@
             emailService.addEmail($scope.email.text).then(success, failure);
         }
 
-        function success(){
+        function success(response){
             $rootScope.$broadcast(appConstants.eventsNames.onSendEmail);
         }
 
-        function failure(){
+        function failure(response){
             $rootScope.$broadcast(appConstants.eventsNames.onSendEmailFailed);
         }
 
